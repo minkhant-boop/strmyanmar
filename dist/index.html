@@ -46,7 +46,9 @@
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.75,.2,1)}.reveal.visible{opacity:1;transform:none}
     @keyframes rise{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}@keyframes draw{to{stroke-dashoffset:0}}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes drift{to{transform:translate(-6rem,5rem) scale(1.08)}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}    .team-section{position:relative;background:linear-gradient(145deg,#f8fcff,var(--panel));margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);padding-left:var(--pad);padding-right:var(--pad);overflow:hidden}.team-section:after{content:"";position:absolute;width:24rem;height:24rem;border:1px solid rgba(40,155,228,.18);border-radius:50%;right:-9rem;top:-10rem}.team-intro{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem);position:relative;z-index:1}.team-intro h2{font-family:Manrope,sans-serif;font-size:clamp(3rem,7vw,7rem);line-height:.9;letter-spacing:-.07em;margin:0;background:linear-gradient(125deg,var(--navy),#237fbd);-webkit-background-clip:text;background-clip:text;color:transparent}.team-intro p{max-width:31rem;color:var(--muted);font-size:1.1rem;margin:0}.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.25rem,3vw,2.5rem);max-width:70rem;position:relative;z-index:1}.team-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 18px 50px rgba(34,115,170,.1);transition:transform .35s ease,box-shadow .35s ease}.team-card:hover{transform:translateY(-7px);box-shadow:0 26px 60px rgba(34,115,170,.17)}.portrait-placeholder{aspect-ratio:4/5;position:relative;background:linear-gradient(145deg,#eef8ff,#d9effc);display:grid;place-items:center;overflow:hidden}.portrait-placeholder:before,.portrait-placeholder:after{content:"";position:absolute;border:1px solid rgba(40,155,228,.24)}.portrait-placeholder:before{width:58%;height:58%;border-radius:50%;top:18%}.portrait-placeholder:after{width:72%;height:32%;border-radius:50% 50% 0 0;bottom:-12%}.portrait-placeholder span{position:relative;z-index:1;color:var(--accent-strong);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.75);padding:.55rem .8rem;border-radius:999px;backdrop-filter:blur(8px)}.team-meta{padding:1.4rem 1.5rem 1.6rem}.team-meta strong{display:block;font-family:Manrope,sans-serif;font-size:1.3rem}.team-meta span{color:var(--muted);font-size:.9rem}.team-card:first-child{transition-delay:.04s}.team-card:nth-child(2){transition-delay:.12s}
-    @media(max-width:760px){.team-intro,.team-grid{grid-template-columns:1fr}.team-grid{max-width:30rem}.team-intro p{font-size:1rem}.team-section:after{width:16rem;height:16rem}}    .portrait-placeholder.has-photo:before,.portrait-placeholder.has-photo:after{display:none}.portrait-placeholder.has-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease,filter .35s ease;filter:saturate(.9) contrast(1.02)}.team-card:hover .portrait-placeholder.has-photo img{transform:scale(1.035);filter:saturate(1) contrast(1.03)}.team-card:first-child .portrait-placeholder.has-photo img{object-position:center 42%}.team-card:nth-child(2) .portrait-placeholder.has-photo img{object-position:center center}  </style>
+    @media(max-width:760px){.team-intro,.team-grid{grid-template-columns:1fr}.team-grid{max-width:30rem}.team-intro p{font-size:1rem}.team-section:after{width:16rem;height:16rem}}    .portrait-placeholder.has-photo:before,.portrait-placeholder.has-photo:after{display:none}.portrait-placeholder.has-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease,filter .35s ease;filter:saturate(.9) contrast(1.02)}.team-card:hover .portrait-placeholder.has-photo img{transform:scale(1.035);filter:saturate(1) contrast(1.03)}.team-card:first-child .portrait-placeholder.has-photo img{object-position:center 42%}.team-card:nth-child(2) .portrait-placeholder.has-photo img{object-position:center center}    .media-frame{padding:0;background:#eaf6ff;isolation:isolate}
+    .media-stage,.media-slide{position:absolute;inset:0}.media-slide{margin:0;opacity:0;transform:scale(1.035);transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.75,.2,1);pointer-events:none}.media-slide.active{opacity:1;transform:scale(1);pointer-events:auto}.media-slide img,.media-slide video{width:100%;height:100%;object-fit:cover;display:block}.media-slide video{background:#eaf6ff}.media-frame:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 62%,rgba(11,46,82,.28))}.media-frame .frame-note{z-index:2;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+    .media-controls{position:absolute;right:1rem;bottom:1.05rem;z-index:3;display:flex;align-items:center;gap:.45rem}.media-dot{width:10px;height:10px;padding:0;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:rgba(11,46,82,.35);cursor:pointer;transition:width .3s ease,background .3s ease}.media-dot:hover,.media-dot:focus-visible{background:#fff;outline:2px solid var(--navy);outline-offset:2px}.media-dot.active{width:30px;background:#fff}  </style>
 </head>
 <body>
   <div class="shell">
@@ -54,9 +56,20 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div><div class="eyebrow">Yangon · Myanmar</div><h1 id="hero-title">Strength, made clear.</h1><div class="hero-copy">We design safe, efficient structures and translate complex engineering into practical decisions for architects, developers and builders.</div></div>
-        <div class="frame" aria-label="Abstract structural frame diagram">
-          <svg viewBox="0 0 300 380" role="img"><title>Structural load path diagram</title><path class="axis" d="M36 330h228M58 330V72h184v258M58 150h184M58 235h184M120 72v258M180 72v258M58 72l62 78 60-78 62 78M58 235l62 95 60-95 62 95"/><path class="load" d="M150 24v72m0 0-12-18m12 18 12-18"/><circle class="node" cx="150" cy="72" r="8"/><circle class="node" cx="120" cy="235" r="7"/><circle class="node" cx="180" cy="235" r="7"/></svg>
-          <span class="frame-note">Load path / 01</span>
+        <div class="frame media-frame" aria-label="Structural model reference gallery">
+          <div class="media-stage">
+            <figure class="media-slide active"><video autoplay muted loop playsinline preload="metadata" poster="structure-model-01.jpg"><source src="structure-demo.mp4" type="video/mp4"></video></figure>
+            <figure class="media-slide"><img src="structure-model-01.jpg" alt="Three-dimensional structural frame model, first view" width="1024" height="1024"></figure>
+            <figure class="media-slide"><img src="structure-model-02.jpg" alt="Three-dimensional structural frame model, second view" width="1024" height="1024"></figure>
+            <figure class="media-slide"><img src="structure-model-03.jpg" alt="Three-dimensional structural frame model, third view" width="1024" height="1024"></figure>
+          </div>
+          <span class="frame-note">Structural model / 01</span>
+          <div class="media-controls" aria-label="Choose a structural model reference">
+            <button class="media-dot active" type="button" aria-label="Show structural model video" aria-pressed="true"></button>
+            <button class="media-dot" type="button" aria-label="Show structural model image 1" aria-pressed="false"></button>
+            <button class="media-dot" type="button" aria-label="Show structural model image 2" aria-pressed="false"></button>
+            <button class="media-dot" type="button" aria-label="Show structural model image 3" aria-pressed="false"></button>
+          </div>
         </div>
       </section>
       <section id="services"><div class="section-head"><h2>What we do</h2><p>Structural thinking from early concept to construction—focused on economy, resilience and details that work on site.</p></div><div class="services">
@@ -75,6 +88,27 @@
       </section>    </main>
     <footer id="contact"><div class="footer-top"><h2>Build with<br>confidence.</h2><a class="contact" href="tel:+959440226664">Call the studio ↗</a></div><div class="footer-base"><span>STR Myanmar · Structural Design</span><a href="https://share.google/RZMr3dfVfoDp7nE6j" target="_blank" rel="noopener">Bo Gyoke Aung San Road, Yangon 11171</a><span>© <span id="year"></span></span></div></footer>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();const items=document.querySelectorAll('main>section:not(.hero),.service,.fact');items.forEach(el=>el.classList.add('reveal'));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});items.forEach(el=>observer.observe(el));</script>
+  <script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const items=document.querySelectorAll('main>section:not(.hero),.service,.fact');
+items.forEach(el=>el.classList.add('reveal'));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+items.forEach(el=>observer.observe(el));
+const slides=[...document.querySelectorAll('.media-slide')];
+const dots=[...document.querySelectorAll('.media-dot')];
+const mediaLabel=document.querySelector('.media-frame .frame-note');
+let currentSlide=0;
+let slideTimer;
+function showSlide(index){
+  currentSlide=(index+slides.length)%slides.length;
+  slides.forEach((slide,i)=>{const active=i===currentSlide;slide.classList.toggle('active',active);const video=slide.querySelector('video');if(video){if(active){video.muted=true;video.play().catch(()=>{});}else{video.pause();}}});
+  dots.forEach((dot,i)=>{const active=i===currentSlide;dot.classList.toggle('active',active);dot.setAttribute('aria-pressed',String(active));});
+  mediaLabel.textContent=`Structural model / ${String(currentSlide+1).padStart(2,'0')}`;
+}
+function restartSlides(){clearInterval(slideTimer);if(!matchMedia('(prefers-reduced-motion: reduce)').matches){slideTimer=setInterval(()=>showSlide(currentSlide+1),5200);}}
+dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showSlide(i);restartSlides();}));
+showSlide(0);restartSlides();
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(slideTimer);}else{restartSlides();}});
+</script>
 </body>
 </html>
